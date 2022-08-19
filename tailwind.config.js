@@ -6,6 +6,9 @@ module.exports = {
       height: {
         86: "21.5rem",
       },
+      borderColor: ["odd", "even"],
+      borderOpacity: ["odd", "even"],
+      borderWidth: ["odd", "even"],
     },
   },
   plugins: [],
