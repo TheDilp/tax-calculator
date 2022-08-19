@@ -1,0 +1,7 @@
+{
+  "name": "tax-calculator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Arctur <mihailo.dilparic@gmail.com>",
+  "license": "MIT"
+}
