@@ -1,9 +1,10 @@
 import React from "react";
+import ToggleButton from "./ToggleButton";
 
 export default function Inputs() {
   return (
-    <div className="w-1/2 border-r-2 border-gray-300 p-4">
-      <h2 className="text-center text-xl font-semibold mb-2">
+    <div className="w-1/2 border-r-2 border-gray-300 p-4 space-y-4">
+      <h2 className="text-center text-xl font-semibold">
         What is your total income?
       </h2>
       <div>
@@ -13,7 +14,7 @@ export default function Inputs() {
             type="number"
             placeholder="e.g 12,000"
           />
-          <select defaultValue={"Monthly"}>
+          <select className="outline-none" defaultValue={"Monthly"}>
             <option value="Weekly">Weekly</option>
             <option value="Fortnightly">Fortnightly</option>
             <option value="Monthly">Monthly</option>
@@ -21,11 +22,13 @@ export default function Inputs() {
           </select>
         </div>
       </div>
-      <div>
-        <h2>Please choose the income type</h2>
-        <div className="space-x-4">
-          <button>Gross Income</button>
-          <button>Net Income</button>
+      <div className="mt-2 space-y-2">
+        <h2 className="text-center text-xl font-semibold">
+          Please choose the income type
+        </h2>
+        <div className="flex space-x-4">
+          <ToggleButton title="Gross Income" />
+          <ToggleButton title="Net Income" />
         </div>
       </div>
       <div>
