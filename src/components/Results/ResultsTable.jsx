@@ -1,7 +1,12 @@
 import React from "react";
 
 export default function ResultsTable({ incomeResults }) {
-  const frequencies = ["weekly", "fortnightly", "monthly", "annually"];
+  const frequencies = [
+    { title: "Weekly", type: "weekly" },
+    { title: "Fortnightly", type: "fortnightly" },
+    { title: "Monthly", type: "monthly" },
+    { title: "Annually", type: "annually" },
+  ];
   return (
     <table className="w-full text-center">
       <thead>
@@ -18,11 +23,15 @@ export default function ResultsTable({ incomeResults }) {
             key={freq}
             className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
-            <td className="text-left py-3">{freq}</td>
-            <td>${incomeResults[freq]}</td>
-            <td>${(incomeResults[freq] * 0.2).toFixed(2)}</td>
+            <td className="text-left py-3">{freq.title}</td>
+            <td>${incomeResults[freq.type]}</td>
+            <td>${(incomeResults[freq.type] * 0.2).toFixed(2)}</td>
             <td>
-              ${(incomeResults[freq] - incomeResults[freq] * 0.2).toFixed(2)}
+              $
+              {(
+                incomeResults[freq.type] -
+                incomeResults[freq.type] * 0.2
+              ).toFixed(2)}
             </td>
           </tr>
         ))}
