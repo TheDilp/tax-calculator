@@ -3,14 +3,14 @@ import ToggleButton from "./ToggleButton";
 
 export default function Inputs() {
   return (
-    <div className="w-1/2 border-r-2 border-gray-300 p-4 space-y-4">
-      <h2 className="text-center text-xl font-semibold">
-        What is your total income?
-      </h2>
-      <div>
+    <div className="flex flex-col gap-y-8 w-1/2 border-r-2 border-gray-300 p-4">
+      <div className="w-full space-y-4">
+        <h2 className="text-center text-xl font-semibold">
+          What is your total income?
+        </h2>
         <div className="flex border-2 border-blue-400 rounded-lg p-1">
           <input
-            className="flex-1 outline-none appearance-none"
+            className="flex-1 py-1 px-2 outline-none appearance-none"
             type="number"
             placeholder="e.g 12,000"
           />
@@ -22,7 +22,8 @@ export default function Inputs() {
           </select>
         </div>
       </div>
-      <div className="mt-2 space-y-2">
+
+      <div className="w-full space-y-4">
         <h2 className="text-center text-xl font-semibold">
           Please choose the income type
         </h2>
@@ -31,8 +32,10 @@ export default function Inputs() {
           <ToggleButton title="Net Income" />
         </div>
       </div>
-      <div>
-        <button>Calculate</button>
+      <div className="flex w-full">
+        <button className="w-1/2 mx-auto shadow-sm rounded-lg py-2 text-lg border-slate-100 border-2 bg-blue-500 text-white hover:text-blue-400  active:shadow-none transition-colors">
+          Calculate
+        </button>
       </div>
     </div>
   );
