@@ -1,19 +1,10 @@
 import React from "react";
+import Wrapper from "./components/Wrapper";
 
 export default function App() {
   return (
-    <div className="full-screen">
-      <div>
-        <h1 className="text-red-500">React Page </h1>
-        <br />
-        <a
-          className="button-line"
-          href="https://github.com/deityhub"
-          target="_blank"
-        >
-          Know more now
-        </a>
-      </div>
+    <div id="App" className="h-screen flex justify-center items-center">
+      <Wrapper />
     </div>
   );
 }
