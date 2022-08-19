@@ -4,7 +4,7 @@ export default function App() {
   return (
     <div className="full-screen">
       <div>
-        <h1>React Page </h1>
+        <h1 className="text-red-500">React Page </h1>
         <br />
         <a
           className="button-line"
