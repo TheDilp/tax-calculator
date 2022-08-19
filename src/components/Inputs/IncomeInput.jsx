@@ -9,19 +9,25 @@ export default function IncomeInput() {
         className="flex-1 py-1 px-2 outline-none appearance-none my-2"
         type="number"
         placeholder="e.g 12,000"
-        value={incomeData?.income?.[incomeData.incomeRate] || undefined}
+        value={incomeData?.income || undefined}
         onChange={(e) =>
-          dispatch({ type: "WEEKLY", payload: parseFloat(e.target.value) })
+          dispatch({
+            type: "CHANGE_INCOME",
+            payload: parseFloat(e.target.value),
+          })
         }
       />
       <select
-        className="outline-none bg-gray-300 text-gray-600 px-2"
-        defaultValue={"Monthly"}
+        className="outline-none bg-gray-300 text-center text-gray-600 px-2 cursor-pointer"
+        value={incomeData.incomeRate}
+        onChange={(e) =>
+          dispatch({ type: "CHANGE_RATE", payload: e.target.value })
+        }
       >
-        <option value="Weekly">Weekly</option>
-        <option value="Fortnightly">Fortnightly</option>
-        <option value="Monthly">Monthly</option>
-        <option value="Annually">Annually</option>
+        <option value="weekly">Weekly</option>
+        <option value="fortnightly">Fortnightly</option>
+        <option value="monthly">Monthly</option>
+        <option value="annually">Annually</option>
       </select>
     </div>
   );
