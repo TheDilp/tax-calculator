@@ -2,9 +2,8 @@ import React, { useContext } from "react";
 import { IncomeContext } from "../../contexts/IncomeContext";
 
 export default function ResultsTable() {
-  const { income } = useContext(IncomeContext);
+  const { income: incomeData } = useContext(IncomeContext);
   const frequencies = ["Weekly", "Fortnightly", "Monthly", "Annually"];
-  if (!income) return <h1>Please enter income first</h1>;
   return (
     <table className="w-full text-center">
       <thead>
