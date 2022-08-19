@@ -1,5 +1,6 @@
 import React from "react";
 import Inputs from "./Inputs";
+import Results from "./Results";
 
 export default function Wrapper() {
   return (
@@ -11,6 +12,7 @@ export default function Wrapper() {
       </div>
       <div className="w-full flex flex-row h-86">
         <Inputs />
+        <Results />
       </div>
     </div>
   );
