@@ -3,7 +3,7 @@ import ToggleButton from "./ToggleButton";
 
 export default function Inputs() {
   return (
-    <div className="flex flex-col gap-y-8 w-1/2 border-r-2 border-gray-300 p-4">
+    <div className="flex flex-col gap-y-8 w-1/2 border-r-2 border-gray-50 p-4">
       <div className="w-full space-y-4">
         <h2 className="text-center text-xl font-semibold">
           What is your total income?
