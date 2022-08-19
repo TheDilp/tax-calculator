@@ -8,8 +8,8 @@ export default function IncomeTypeInput() {
         Please choose the income type
       </h2>
       <div className="flex space-x-4">
-        <ToggleButton title="Gross Income" />
-        <ToggleButton title="Net Income" />
+        <ToggleButton title="Gross Income" type="gross" />
+        <ToggleButton title="Net Income" type="net" />
       </div>
     </div>
   );
