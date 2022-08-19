@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
-
-const IncomeContext = createContext();
+import React from "react";
+export const IncomeContext = createContext();
 
 export default function IncomeProvider({ children }) {
   const [income, setIncome] = useState(0);

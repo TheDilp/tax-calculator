@@ -1,6 +1,6 @@
 import React from "react";
 import IncomeTypeInput from "./IncomeTypeInput";
-import TaxInput from "./TaxInput";
+import IncomeInput from "./IncomeInput";
 
 export default function InputsWrapper() {
   return (
@@ -9,7 +9,7 @@ export default function InputsWrapper() {
         <h2 className="text-center text-xl font-semibold">
           What is your total income?
         </h2>
-        <TaxInput />
+        <IncomeInput />
       </div>
 
       <IncomeTypeInput />

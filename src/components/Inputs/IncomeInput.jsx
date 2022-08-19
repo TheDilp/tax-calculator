@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import { IncomeContext } from "../../contexts/IncomeContext";
 
-export default function TaxInput() {
+export default function IncomeInput() {
+  const { income } = useContext(IncomeContext);
   return (
     <div className="flex border-2 border-gray-200 focus-within:border-blue-400 rounded-md h-10">
       <input
