@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { IncomeContext } from "../../contexts/IncomeContext";
 
 export default function ResultsTable() {
+  const { income } = useContext(IncomeContext);
   const frequencies = ["Weekly", "Fortnightly", "Monthly", "Annually"];
+  if (!income) return <h1>Please enter income first</h1>;
   return (
     <table className="w-full text-center">
       <thead>
@@ -14,8 +17,11 @@ export default function ResultsTable() {
       </thead>
       <tbody className="">
         {frequencies.map((freq) => (
-          <tr key={freq} className="even:border-y-2 border-gray-50">
-            <td className="text-left">{freq}</td>
+          <tr
+            key={freq}
+            className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
+          >
+            <td className="text-left py-3">{freq}</td>
             <td>Malcolm Lockyer</td>
             <td>1961</td>
             <td>1961</td>
