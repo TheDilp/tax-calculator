@@ -7,7 +7,7 @@ export default function ResultsWrapper() {
   const [incomeRate, setIncomeRate] = useState("weekly");
   const [incomeResults, setIncomeResults] = useState({
     weekly: 0,
-    fornightly: 0,
+    fortnightly: 0,
     monthly: 0,
     annually: 0,
   });
@@ -15,7 +15,14 @@ export default function ResultsWrapper() {
   useEffect(() => {
     if (incomeData?.income) {
       if (incomeData.incomeType === "gross") {
-        if (incomeData.incomeRate) {
+        if (incomeData.incomeRate === "weekly") {
+          console.log(incomeData.income);
+          setIncomeResults({
+            weekly: incomeData.income,
+            fortnightly: incomeData.income * 2,
+            monthly: incomeData.income * 4.33,
+            annually: incomeData.income * 52,
+          });
         }
       }
     }
@@ -31,7 +38,7 @@ export default function ResultsWrapper() {
         is your {incomeRate} net income
       </div>
       <div className="">
-        <ResultsTable />
+        <ResultsTable incomeResults={incomeResults} />
       </div>
     </div>
   );

@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
-import { IncomeContext } from "../../contexts/IncomeContext";
+import React from "react";
 
-export default function ResultsTable() {
-  const { income: incomeData } = useContext(IncomeContext);
-  const frequencies = ["Weekly", "Fortnightly", "Monthly", "Annually"];
+export default function ResultsTable({ incomeResults }) {
+  const frequencies = ["weekly", "fortnightly", "monthly", "annually"];
   return (
     <table className="w-full text-center">
       <thead>
@@ -21,9 +19,11 @@ export default function ResultsTable() {
             className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
             <td className="text-left py-3">{freq}</td>
-            <td>Malcolm Lockyer</td>
-            <td>1961</td>
-            <td>1961</td>
+            <td>${incomeResults[freq]}</td>
+            <td>${(incomeResults[freq] * 0.2).toFixed(2)}</td>
+            <td>
+              ${(incomeResults[freq] - incomeResults[freq] * 0.2).toFixed(2)}
+            </td>
           </tr>
         ))}
       </tbody>

@@ -18,8 +18,8 @@ export default function IncomeProvider({ children }) {
 
   const [incomeData, dispatch] = useReducer(incomeReducer, {
     income: undefined,
-    incomeRate: "Weekly",
-    incomeType: "Gross",
+    incomeRate: "weekly",
+    incomeType: "gross",
   });
 
   return (
