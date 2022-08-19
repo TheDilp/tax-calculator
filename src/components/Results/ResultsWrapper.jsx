@@ -16,17 +16,37 @@ export default function ResultsWrapper() {
     if (incomeData?.income) {
       if (incomeData.incomeType === "gross") {
         if (incomeData.incomeRate === "weekly") {
-          console.log(incomeData.income);
           setIncomeResults({
             weekly: incomeData.income,
             fortnightly: incomeData.income * 2,
             monthly: incomeData.income * 4.33,
             annually: incomeData.income * 52,
           });
+        } else if (incomeData.incomeRate === "fortnightly") {
+          setIncomeResults({
+            weekly: incomeData.income / 2,
+            fortnightly: incomeData.income,
+            monthly: incomeData.income * 2.165,
+            annually: incomeData.income * 26,
+          });
+        } else if (incomeData.incomeRate === "monthly") {
+          setIncomeResults({
+            weekly: incomeData.income / 4.33,
+            fortnightly: incomeData.income / 2.165,
+            monthly: incomeData.income,
+            annually: incomeData.income * 12,
+          });
+        } else if (incomeData.incomeRate === "annually") {
+          setIncomeResults({
+            weekly: incomeData.income / 52,
+            fortnightly: incomeData.income / 26,
+            monthly: incomeData.income / 12,
+            annually: incomeData.income,
+          });
         }
       }
     }
-  }, [incomeData?.income]);
+  }, [incomeData]);
 
   // If no income is set display message
   if (!incomeData?.income) return <h1>Please enter your income first</h1>;
