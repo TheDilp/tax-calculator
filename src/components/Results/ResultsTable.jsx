@@ -1,4 +1,5 @@
 import React from "react";
+import { formatter } from "../../contexts/IncomeContext";
 
 export default function ResultsTable({ incomeResults }) {
   const frequencies = [
@@ -24,7 +25,7 @@ export default function ResultsTable({ incomeResults }) {
             className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
             <td className="text-left py-3">{freq.title}</td>
-            <td>${incomeResults[freq.type].toFixed(2)}</td>
+            <td>${formatter.format(incomeResults[freq.type])}</td>
             <td>${(incomeResults[freq.type] * 0.2).toFixed(2)}</td>
             <td>
               $
