@@ -26,10 +26,18 @@ export default function IncomeInput() {
           dispatch({ type: "CHANGE_RATE", payload: e.target.value })
         }
       >
-        <option value="weekly">Weekly</option>
-        <option value="fortnightly">Fortnightly</option>
-        <option value="monthly">Monthly</option>
-        <option value="annually">Annually</option>
+        <option className="bg-white" value="weekly">
+          Weekly
+        </option>
+        <option className="bg-white" value="fortnightly">
+          Fortnightly
+        </option>
+        <option className="bg-white" value="monthly">
+          Monthly
+        </option>
+        <option className="bg-white" value="annually">
+          Annually
+        </option>
       </select>
     </div>
   );

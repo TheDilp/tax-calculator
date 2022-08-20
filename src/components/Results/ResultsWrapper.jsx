@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { IncomeContext } from "../../contexts/IncomeContext";
+import EnterIncomeWarn from "./EnterIncomeWarn";
 import ResultsTable from "./ResultsTable";
 
 export default function ResultsWrapper() {
@@ -51,7 +52,7 @@ export default function ResultsWrapper() {
 
   // If no income is set display message
   if (!incomeData?.income || !incomeData?.income?.value)
-    return <h1>Please enter your income first</h1>;
+    return <EnterIncomeWarn />;
 
   return (
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
