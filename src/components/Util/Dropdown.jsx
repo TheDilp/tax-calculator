@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
 
-export default function Dropdown({ onSelectFrequency }) {
+export default function Dropdown({ value, onSelectFrequency }) {
   const {
     incomeData: { incomeRate },
     dispatch,
@@ -11,11 +11,26 @@ export default function Dropdown({ onSelectFrequency }) {
   return (
     <span className="inline-flex relative">
       <button
-        class="bg-gray-300 px-4 outline-none text-center "
+        class="flex items-center px-4 outline-none text-center "
         type="button"
         onClick={() => setShowDropdown(!showDropdown)}
       >
-        {incomeRate}
+        {/* Display passed down value prop for results OR the global value in context for input */}
+        {value || incomeRate}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-3 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </button>
       {showDropdown && (
         <div class="z-10 absolute w-44 top-10 divide-y divide-gray-100">

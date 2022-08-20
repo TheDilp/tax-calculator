@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { IncomeContext } from "../../contexts/IncomeContext";
+import { formatter, IncomeContext } from "../../contexts/IncomeContext";
 import EnterIncomeWarn from "./EnterIncomeWarn";
 import ResultsTable from "./ResultsTable";
-
+import Dropdown from "../Util/Dropdown";
 export default function ResultsWrapper() {
   const { incomeData } = useContext(IncomeContext);
   const [incomeRate, setIncomeRate] = useState("weekly");
@@ -58,18 +58,13 @@ export default function ResultsWrapper() {
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
       <div>
         <span className="text-2xl font-bold mr-4">
-          {incomeData.income.display}
+          {formatter.format(incomeResults[incomeRate])}
         </span>
         is your net
-        <select
-          defaultValue={"weekly"}
-          className="text-center underline w-20 outline-none"
-        >
-          <option>weekly</option>
-          <option>fortnightly</option>
-          <option>monthly</option>
-          <option>annual</option>
-        </select>
+        <Dropdown
+          value={incomeRate}
+          onSelectFrequency={(freq) => setIncomeRate(freq)}
+        />
         income
       </div>
       <div className="">
