@@ -1,5 +1,6 @@
 import React from "react";
 import IncomeProvider from "../contexts/IncomeContext";
+import Footer from "./Footer/Footer";
 import InputsWrapper from "./Inputs/InputsWrapper";
 import ResultsWrapper from "./Results/ResultsWrapper";
 
@@ -16,6 +17,9 @@ export default function Wrapper() {
           <InputsWrapper />
           <ResultsWrapper />
         </IncomeProvider>
+      </div>
+      <div className="w-full">
+        <Footer />
       </div>
     </div>
   );
