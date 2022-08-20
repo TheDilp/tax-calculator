@@ -21,18 +21,16 @@ export default function ResultsTable({ incomeResults }) {
       <tbody className="">
         {frequencies.map((freq) => (
           <tr
-            key={freq}
+            key={freq.title}
             className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
             <td className="text-left py-3">{freq.title}</td>
-            <td>${formatter.format(incomeResults[freq.type])}</td>
-            <td>${(incomeResults[freq.type] * 0.2).toFixed(2)}</td>
+            <td>{formatter.format(incomeResults[freq.type])}</td>
+            <td>{formatter.format(incomeResults[freq.type] * 0.2)}</td>
             <td>
-              $
-              {(
-                incomeResults[freq.type] -
-                incomeResults[freq.type] * 0.2
-              ).toFixed(2)}
+              {formatter.format(
+                incomeResults[freq.type] - incomeResults[freq.type] * 0.2
+              )}
             </td>
           </tr>
         ))}

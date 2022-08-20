@@ -15,12 +15,12 @@ export default function ResultsWrapper() {
   useEffect(() => {
     if (incomeData?.income) {
       if (incomeData.incomeType === "gross") {
+        const { value: incomeValue } = incomeData.income;
         if (incomeData.incomeRate === "weekly") {
-          const { value: incomeValue } = incomeData.income;
           setIncomeResults({
             weekly: incomeValue,
             fortnightly: incomeValue * 2,
-            monthly: incomeValue * 4.33,
+            monthly: incomeValue * 4.3333333,
             annually: incomeValue * 52,
           });
         } else if (incomeData.incomeRate === "fortnightly") {

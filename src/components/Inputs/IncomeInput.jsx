@@ -9,9 +9,9 @@ export default function IncomeInput() {
       <span className="my-auto pl-2 text-gray-400">$</span>
       <input
         className="flex-1 py-1 px-2 outline-none appearance-none my-2"
-        type="text"
+        type="number"
         placeholder="e.g 12,000"
-        value={incomeData?.income?.value || undefined}
+        value={incomeData?.income?.value || ""}
         onChange={(e) =>
           dispatch({
             type: "CHANGE_INCOME",
