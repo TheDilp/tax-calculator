@@ -60,7 +60,17 @@ export default function ResultsWrapper() {
         <span className="text-2xl font-bold mr-4">
           {incomeData.income.display}
         </span>
-        is your {incomeRate} net income
+        is your net
+        <select
+          defaultValue={"weekly"}
+          className="text-center underline w-20 outline-none"
+        >
+          <option>weekly</option>
+          <option>fortnightly</option>
+          <option>monthly</option>
+          <option>annual</option>
+        </select>
+        income
       </div>
       <div className="">
         <ResultsTable incomeResults={incomeResults} />

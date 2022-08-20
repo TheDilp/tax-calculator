@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { IncomeContext } from "../contexts/IncomeContext";
+import { IncomeContext } from "../../contexts/IncomeContext";
 
 export default function ToggleButton({ title, type }) {
   const { incomeData, dispatch } = useContext(IncomeContext);

@@ -1,13 +1,7 @@
 import React from "react";
-import { formatter } from "../../contexts/IncomeContext";
+import { formatter, frequencies } from "../../contexts/IncomeContext";
 
 export default function ResultsTable({ incomeResults }) {
-  const frequencies = [
-    { title: "Weekly", type: "weekly" },
-    { title: "Fortnightly", type: "fortnightly" },
-    { title: "Monthly", type: "monthly" },
-    { title: "Annually", type: "annually" },
-  ];
   return (
     <table className="w-full text-center">
       <thead>

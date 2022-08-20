@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { IncomeContext } from "../../contexts/IncomeContext";
+import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
+import Dropdown from "../Util/Dropdown";
 
 export default function IncomeInput() {
   const { incomeData, dispatch } = useContext(IncomeContext);
@@ -19,26 +20,7 @@ export default function IncomeInput() {
           })
         }
       />
-      <select
-        className="outline-none bg-gray-300 text-center text-gray-600 px-2 cursor-pointer"
-        value={incomeData.incomeRate}
-        onChange={(e) =>
-          dispatch({ type: "CHANGE_RATE", payload: e.target.value })
-        }
-      >
-        <option className="bg-white" value="weekly">
-          Weekly
-        </option>
-        <option className="bg-white" value="fortnightly">
-          Fortnightly
-        </option>
-        <option className="bg-white" value="monthly">
-          Monthly
-        </option>
-        <option className="bg-white" value="annually">
-          Annually
-        </option>
-      </select>
+      <Dropdown />
     </div>
   );
 }

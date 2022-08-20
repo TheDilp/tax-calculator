@@ -1,5 +1,5 @@
 import React from "react";
-import ToggleButton from "../ToggleButton";
+import ToggleButton from "../Util/ToggleButton";
 
 export default function IncomeTypeInput() {
   return (

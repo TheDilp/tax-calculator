@@ -5,7 +5,12 @@ export const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });
-
+export const frequencies = [
+  { title: "Weekly", type: "weekly" },
+  { title: "Fortnightly", type: "fortnightly" },
+  { title: "Monthly", type: "monthly" },
+  { title: "Annually", type: "annually" },
+];
 export default function IncomeProvider({ children }) {
   function incomeReducer(state, action) {
     switch (action.type) {
