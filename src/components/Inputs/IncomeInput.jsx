@@ -20,7 +20,11 @@ export default function IncomeInput() {
           })
         }
       />
-      <Dropdown />
+      <Dropdown
+        onSelectFrequency={(freq) =>
+          dispatch({ type: "CHANGE_RATE", payload: freq })
+        }
+      />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
 
-export default function Dropdown({ frequency }) {
+export default function Dropdown({ onSelectFrequency }) {
   const {
     incomeData: { incomeRate },
     dispatch,
@@ -26,7 +26,7 @@ export default function Dropdown({ frequency }) {
                 className="bg-white py-2 cursor-pointer text-center hover:bg-blue-300"
                 value={freq.type}
                 onClick={() => {
-                  dispatch({ type: "CHANGE_RATE", payload: freq.type });
+                  onSelectFrequency(freq.type);
                   setShowDropdown(false);
                 }}
               >
