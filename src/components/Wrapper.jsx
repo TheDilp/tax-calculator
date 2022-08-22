@@ -4,6 +4,7 @@ import Footer from "./Footer/Footer";
 import InputsWrapper from "./Inputs/InputsWrapper";
 import ResultsWrapper from "./Results/ResultsWrapper";
 import CalcButton from "./Util/CalcButton";
+import CalculatorTitle from "./Util/CalculatorTitle";
 import TabButton from "./Util/TabButton";
 
 export default function Wrapper() {
@@ -12,9 +13,7 @@ export default function Wrapper() {
   return (
     <div className="w-full lg:w-1/2 flex flex-row flex-wrap content-start shadow-md rounded-md overflow-hidden">
       <div className="w-full h-10 pb-10">
-        <h1 className="hidden lg:block text-3xl font-semibold text-center border-b-2">
-          Income Tax Calculator
-        </h1>
+        <CalculatorTitle />
         <div className="lg:hidden w-full flex items-center">
           <TabButton
             title="Income"
@@ -31,7 +30,7 @@ export default function Wrapper() {
       <div className="w-full flex flex-row h-86">
         <IncomeProvider>
           <div
-            className={`w-full lg:w-1/2 flex-wrap content-evenly  ${
+            className={`w-full lg:w-1/2 flex-wrap content-evenly lg:content-start  ${
               page === 1 ? "hidden lg:flex " : "flex"
             }`}
           >
