@@ -1,63 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { formatter, IncomeContext } from "../../contexts/IncomeContext";
+import Dropdown from "../Util/Dropdown";
 import EnterIncomeWarn from "./EnterIncomeWarn";
 import ResultsTable from "./ResultsTable";
-import Dropdown from "../Util/Dropdown";
-import { taxRate } from "../../util";
 export default function ResultsWrapper() {
   const { incomeData } = useContext(IncomeContext);
   const [incomeRate, setIncomeRate] = useState("weekly");
-  const [incomeResults, setIncomeResults] = useState({
-    weekly: 0,
-    fortnightly: 0,
-    monthly: 0,
-    annually: 0,
-  });
-
-  useEffect(() => {
-    if (incomeData?.income) {
-      const { value: incomeValue } = incomeData.income;
-      if (incomeData.incomeType === "gross") {
-        if (incomeData.incomeRate === "weekly") {
-          setIncomeResults({
-            weekly: incomeValue,
-            fortnightly: incomeValue * 2,
-            monthly: incomeValue * 4.3333333,
-            annually: incomeValue * 52,
-          });
-        } else if (incomeData.incomeRate === "fortnightly") {
-          setIncomeResults({
-            weekly: incomeValue / 2,
-            fortnightly: incomeValue,
-            monthly: incomeValue * 2.165,
-            annually: incomeValue * 26,
-          });
-        } else if (incomeData.incomeRate === "monthly") {
-          setIncomeResults({
-            weekly: incomeValue / 4.33,
-            fortnightly: incomeValue / 2.165,
-            monthly: incomeValue,
-            annually: incomeValue * 12,
-          });
-        } else if (incomeData.incomeRate === "annually") {
-          setIncomeResults({
-            weekly: incomeValue / 52,
-            fortnightly: incomeValue / 26,
-            monthly: incomeValue / 12,
-            annually: incomeValue,
-          });
-        }
-      } else if (incomeData.incomeType === "net") {
-        if (incomeData.incomeRate === "weekly") {
-        }
-      }
-    }
-  }, [incomeData]);
 
   // If no income is set display message
   if (!incomeData?.income) return <EnterIncomeWarn />;
+
   return (
-    <div className="flex flex-col gap-y-8 w-1/2 p-4">
+    <div className="w-full lg:w-1/2 p-4 hidden lg:flex flex-col gap-y-8 ">
       <div className="font-semibold">
         <span className="text-2xl font-bold mr-4">
           {formatter.format(incomeData.income[`net_${incomeRate}`])}

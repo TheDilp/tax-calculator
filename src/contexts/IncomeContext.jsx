@@ -1,5 +1,5 @@
-import React, { createContext, useEffect, useReducer } from "react";
-import { calculateIncome, taxRate } from "../util";
+import React, { createContext, useReducer } from "react";
+import { calculateIncome } from "../util";
 export const IncomeContext = createContext();
 
 export const formatter = new Intl.NumberFormat("en-US", {
@@ -39,8 +39,6 @@ export default function IncomeProvider({ children }) {
     incomeRate: "weekly",
     incomeType: "gross",
   });
-
-  useEffect(() => {}, [incomeData.incomeType]);
 
   return (
     <IncomeContext.Provider value={{ incomeData, dispatch }}>

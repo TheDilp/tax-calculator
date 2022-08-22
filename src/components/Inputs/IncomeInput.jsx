@@ -11,10 +11,11 @@ export default function IncomeInput() {
   );
 
   useEffect(() => {
-    dispatch({
-      type: "CHANGE_INCOME",
-      payload: localIncome,
-    });
+    if (localIncome)
+      dispatch({
+        type: "CHANGE_INCOME",
+        payload: localIncome,
+      });
   }, [incomeData.incomeType]);
 
   return (
