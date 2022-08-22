@@ -8,7 +8,7 @@ export default function TabButton({ title, onClick, selected }) {
       }  h-full flex justify-center items-center py-2 border-b-2 cursor-pointer transition-all`}
       onClick={onClick}
     >
-      <h3 className="text-xl font-bold">{title}</h3>
+      <h3 className="text-xl font-semibold">{title}</h3>
     </div>
   );
 }

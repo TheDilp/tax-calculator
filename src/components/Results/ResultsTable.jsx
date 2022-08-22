@@ -22,9 +22,9 @@ export default function ResultsTable() {
         {frequencies.map((freq) => (
           <tr
             key={freq.title}
-            className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
+            className="text-sm lg:text-base even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
-            <td className="text-left py-3">{freq.title}</td>
+            <td className="text-left py-3 px-2">{freq.title}</td>
             <td>{formatter.format(incomeData.income[`gross_${freq.type}`])}</td>
             <td>
               {formatter.format(
