@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { formatter, IncomeContext } from "../../contexts/IncomeContext";
+import DownloadButton from "../Util/Buttons/DownloadButton";
 import Dropdown from "../Util/Dropdown";
 import EnterIncomeWarn from "./EnterIncomeWarn";
 import ResultsTable from "./ResultsTable";
@@ -26,6 +27,7 @@ export default function ResultsWrapper() {
       </div>
       <div className="">
         <ResultsTable />
+        <DownloadButton />
       </div>
     </div>
   );

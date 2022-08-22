@@ -3,9 +3,9 @@ import IncomeProvider from "../contexts/IncomeContext";
 import Footer from "./Footer/Footer";
 import InputsWrapper from "./Inputs/InputsWrapper";
 import ResultsWrapper from "./Results/ResultsWrapper";
-import CalcButton from "./Util/CalcButton";
+import CalcButton from "./Util/Buttons/CalcButton";
 import CalculatorTitle from "./Util/CalculatorTitle";
-import TabButton from "./Util/TabButton";
+import TabButton from "./Util/Buttons/TabButton";
 
 export default function Wrapper() {
   const [page, setPage] = useState(0);
@@ -30,7 +30,7 @@ export default function Wrapper() {
       <div className="w-full flex flex-row h-86">
         <IncomeProvider>
           <div
-            className={`w-full lg:w-1/2 flex-wrap content-evenly lg:content-start  ${
+            className={`w-full lg:w-1/2 flex-wrap content-evenly   ${
               page === 1 ? "hidden lg:flex " : "flex"
             }`}
           >
