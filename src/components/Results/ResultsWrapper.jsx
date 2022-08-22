@@ -13,6 +13,8 @@ export default function ResultsWrapper() {
 
   return (
     <div className="w-full p-4 lg:flex flex-col">
+      <DownloadButton />
+
       <div className="mb-4 text-sm lg:text-base font-semibold">
         <span className="text-2xl font-bold mr-4">
           {formatter.format(incomeData.income[`net_${incomeRate}`])}
@@ -27,7 +29,6 @@ export default function ResultsWrapper() {
       </div>
       <div>
         <ResultsTable />
-        <DownloadButton />
       </div>
     </div>
   );
