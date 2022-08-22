@@ -13,9 +13,11 @@ export default function IncomeInput() {
         type="number"
         placeholder="e.g 12,000"
         value={
-          incomeData?.income?.[
-            `${incomeData.incomeType}_${incomeData.incomeRate}`
-          ] || ""
+          Math.ceil(
+            incomeData?.income?.[
+              `${incomeData.incomeType}_${incomeData.incomeRate}`
+            ]
+          ) || ""
         }
         onChange={(e) =>
           dispatch({
