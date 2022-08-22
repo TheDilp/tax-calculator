@@ -17,6 +17,7 @@ export default function ResultsWrapper() {
     if (incomeData?.income) {
       if (incomeData.incomeType === "gross") {
         const { value: incomeValue } = incomeData.income;
+        
         if (incomeData.incomeRate === "weekly") {
           setIncomeResults({
             weekly: incomeValue,
@@ -53,7 +54,6 @@ export default function ResultsWrapper() {
   // If no income is set display message
   if (!incomeData?.income || !incomeData?.income?.value)
     return <EnterIncomeWarn />;
-
   return (
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
       <div>
@@ -63,6 +63,7 @@ export default function ResultsWrapper() {
         is your net
         <Dropdown
           value={incomeRate}
+          type="display"
           onSelectFrequency={(freq) => setIncomeRate(freq)}
         />
         income

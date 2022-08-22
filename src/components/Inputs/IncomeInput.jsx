@@ -21,6 +21,7 @@ export default function IncomeInput() {
         }
       />
       <Dropdown
+        type="input"
         onSelectFrequency={(freq) =>
           dispatch({ type: "CHANGE_RATE", payload: freq })
         }
