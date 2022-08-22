@@ -17,7 +17,7 @@ export default function ResultsWrapper() {
     if (incomeData?.income) {
       if (incomeData.incomeType === "gross") {
         const { value: incomeValue } = incomeData.income;
-        
+
         if (incomeData.incomeRate === "weekly") {
           setIncomeResults({
             weekly: incomeValue,
@@ -56,7 +56,7 @@ export default function ResultsWrapper() {
     return <EnterIncomeWarn />;
   return (
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
-      <div>
+      <div className="font-semibold">
         <span className="text-2xl font-bold mr-4">
           {formatter.format(incomeResults[incomeRate])}
         </span>

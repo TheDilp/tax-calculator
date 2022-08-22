@@ -12,7 +12,9 @@ export default function Dropdown({ value, type, onSelectFrequency }) {
   return (
     <span className="inline-flex relative">
       <button
-        className="flex items-center px-4 outline-none text-center "
+        className={`flex items-center px-4 outline-none text-center  ${
+          type === "display" ? "font-thin underline" : ""
+        }`}
         type="button"
         onClick={() => setShowDropdown(!showDropdown)}
       >
