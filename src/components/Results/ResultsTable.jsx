@@ -1,5 +1,6 @@
 import React from "react";
 import { formatter, frequencies } from "../../contexts/IncomeContext";
+import { taxRate } from "../../util";
 
 export default function ResultsTable({ incomeResults }) {
   return (
@@ -20,10 +21,10 @@ export default function ResultsTable({ incomeResults }) {
           >
             <td className="text-left py-3">{freq.title}</td>
             <td>{formatter.format(incomeResults[freq.type])}</td>
-            <td>{formatter.format(incomeResults[freq.type] * 0.2)}</td>
+            <td>{formatter.format(incomeResults[freq.type] * taxRate)}</td>
             <td>
               {formatter.format(
-                incomeResults[freq.type] - incomeResults[freq.type] * 0.2
+                incomeResults[freq.type] - incomeResults[freq.type] * taxRate
               )}
             </td>
           </tr>

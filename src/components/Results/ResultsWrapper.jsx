@@ -3,6 +3,7 @@ import { formatter, IncomeContext } from "../../contexts/IncomeContext";
 import EnterIncomeWarn from "./EnterIncomeWarn";
 import ResultsTable from "./ResultsTable";
 import Dropdown from "../Util/Dropdown";
+import { taxRate } from "../../util";
 export default function ResultsWrapper() {
   const { incomeData } = useContext(IncomeContext);
   const [incomeRate, setIncomeRate] = useState("weekly");
@@ -15,9 +16,8 @@ export default function ResultsWrapper() {
 
   useEffect(() => {
     if (incomeData?.income) {
+      const { value: incomeValue } = incomeData.income;
       if (incomeData.incomeType === "gross") {
-        const { value: incomeValue } = incomeData.income;
-
         if (incomeData.incomeRate === "weekly") {
           setIncomeResults({
             weekly: incomeValue,
@@ -47,6 +47,9 @@ export default function ResultsWrapper() {
             annually: incomeValue,
           });
         }
+      } else if (incomeData.incomeType === "net") {
+        if (incomeData.incomeRate === "weekly") {
+        }
       }
     }
   }, [incomeData]);
@@ -58,7 +61,10 @@ export default function ResultsWrapper() {
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
       <div className="font-semibold">
         <span className="text-2xl font-bold mr-4">
-          {formatter.format(incomeResults[incomeRate])}
+          {incomeData.incomeType === "gross" &&
+            formatter.format(
+              incomeResults[incomeRate] - incomeResults[incomeRate] * taxRate
+            )}
         </span>
         is your net
         <Dropdown
