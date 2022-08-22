@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
+import { IncomeContext } from "../../contexts/IncomeContext";
 import Dropdown from "../Util/Dropdown";
 
 export default function IncomeInput() {
