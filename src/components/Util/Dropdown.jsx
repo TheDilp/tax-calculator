@@ -43,7 +43,6 @@ export default function Dropdown({ value, type, onSelectFrequency }) {
                 className="bg-white py-2 cursor-pointer text-center hover:bg-blue-300"
                 value={freq.type}
                 onClick={() => {
-                  console.log(freq.type);
                   onSelectFrequency(freq.type);
                   setShowDropdown(false);
                 }}
