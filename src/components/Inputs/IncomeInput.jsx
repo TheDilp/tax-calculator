@@ -12,7 +12,11 @@ export default function IncomeInput() {
         className="flex-1 py-1 px-2 outline-none appearance-none my-2"
         type="number"
         placeholder="e.g 12,000"
-        value={incomeData?.income?.value || ""}
+        value={
+          incomeData?.income?.[
+            `${incomeData.incomeType}_${incomeData.incomeRate}`
+          ] || ""
+        }
         onChange={(e) =>
           dispatch({
             type: "CHANGE_INCOME",

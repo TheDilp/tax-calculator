@@ -1,8 +1,13 @@
-import React from "react";
-import { formatter, frequencies } from "../../contexts/IncomeContext";
+import React, { useContext } from "react";
+import {
+  formatter,
+  frequencies,
+  IncomeContext,
+} from "../../contexts/IncomeContext";
 import { taxRate } from "../../util";
 
-export default function ResultsTable({ incomeResults }) {
+export default function ResultsTable() {
+  const { incomeData } = useContext(IncomeContext);
   return (
     <table className="w-full text-center">
       <thead>
@@ -20,13 +25,13 @@ export default function ResultsTable({ incomeResults }) {
             className="even:border-y-2 border-gray-50 hover:bg-blue-200 hover:text-blue-600 cursor-pointer"
           >
             <td className="text-left py-3">{freq.title}</td>
-            <td>{formatter.format(incomeResults[freq.type])}</td>
-            <td>{formatter.format(incomeResults[freq.type] * taxRate)}</td>
+            <td>{formatter.format(incomeData.income[`gross_${freq.type}`])}</td>
             <td>
               {formatter.format(
-                incomeResults[freq.type] - incomeResults[freq.type] * taxRate
+                incomeData.income[`gross_${freq.type}`] * taxRate
               )}
             </td>
+            <td>{formatter.format(incomeData.income[`net_${freq.type}`])}</td>
           </tr>
         ))}
       </tbody>

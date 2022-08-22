@@ -4,10 +4,8 @@ import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
 export default function Dropdown({ value, type, onSelectFrequency }) {
   const {
     incomeData: { incomeRate },
-    dispatch,
   } = useContext(IncomeContext);
 
-  console.log(value);
   const [showDropdown, setShowDropdown] = useState(false);
   return (
     <span className="inline-flex relative">

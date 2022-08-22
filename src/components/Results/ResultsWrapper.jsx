@@ -55,16 +55,12 @@ export default function ResultsWrapper() {
   }, [incomeData]);
 
   // If no income is set display message
-  if (!incomeData?.income || !incomeData?.income?.value)
-    return <EnterIncomeWarn />;
+  if (!incomeData?.income) return <EnterIncomeWarn />;
   return (
     <div className="flex flex-col gap-y-8 w-1/2 p-4">
       <div className="font-semibold">
         <span className="text-2xl font-bold mr-4">
-          {incomeData.incomeType === "gross" &&
-            formatter.format(
-              incomeResults[incomeRate] - incomeResults[incomeRate] * taxRate
-            )}
+          {formatter.format(incomeData.income[`net_${incomeRate}`])}
         </span>
         is your net
         <Dropdown
@@ -75,7 +71,7 @@ export default function ResultsWrapper() {
         income
       </div>
       <div className="">
-        <ResultsTable incomeResults={incomeResults} />
+        <ResultsTable />
       </div>
     </div>
   );
