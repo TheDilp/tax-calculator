@@ -11,11 +11,17 @@ export default function IncomeInput() {
   );
 
   useEffect(() => {
-    if (localIncome)
+    if (localIncome) {
       dispatch({
         type: "CHANGE_INCOME",
         payload: localIncome,
       });
+    } else {
+      dispatch({
+        type: "CHANGE_INCOME",
+        payload: undefined,
+      });
+    }
   }, [incomeData.incomeType]);
 
   return (
@@ -27,11 +33,19 @@ export default function IncomeInput() {
         placeholder="e.g 12,000"
         value={localIncome}
         onChange={(e) => {
-          setLocalIncome(parseFloat(e.target.value));
-          dispatch({
-            type: "CHANGE_INCOME",
-            payload: parseFloat(e.target.value),
-          });
+          if (e.target.value) {
+            dispatch({
+              type: "CHANGE_INCOME",
+              payload: parseFloat(e.target.value),
+            });
+            setLocalIncome(parseFloat(e.target.value));
+          } else {
+            dispatch({
+              type: "CHANGE_INCOME",
+              payload: undefined,
+            });
+            setLocalIncome("");
+          }
         }}
       />
       <Dropdown

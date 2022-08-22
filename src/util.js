@@ -2,6 +2,9 @@ export const taxRate = 0.2;
 
 export function calculateIncome(incomeType, incomeRate, payload) {
   let income;
+
+  if (payload === undefined) return undefined;
+
   // If the income type is gross
   if (incomeType === "gross") {
     if (incomeRate === "weekly") {
