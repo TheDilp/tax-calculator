@@ -3,7 +3,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="w-full h-24 flex justify-around items-center bg-sky-200 px-4 lg:px-0">
-      <div className="sm:hidden lg:block">ICON HERE</div>
+      <div className="sm:hidden lg:block text-xs">ICON HERE</div>
       <h2 className="text-center lg:text-xl text-sm font-thin">
         Compare lenders and get your finance
       </h2>

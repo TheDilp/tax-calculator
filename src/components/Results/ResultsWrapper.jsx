@@ -11,7 +11,7 @@ export default function ResultsWrapper() {
   if (!incomeData?.income) return <EnterIncomeWarn />;
 
   return (
-    <div className="w-full lg:w-1/2 p-4 hidden lg:flex flex-col gap-y-8 ">
+    <div className="w-full p-4 lg:flex flex-col gap-y-8 ">
       <div className="font-semibold">
         <span className="text-2xl font-bold mr-4">
           {formatter.format(incomeData.income[`net_${incomeRate}`])}

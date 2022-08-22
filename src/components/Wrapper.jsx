@@ -33,8 +33,27 @@ export default function Wrapper() {
       </div>
       <div className="w-full flex flex-row h-86">
         <IncomeProvider>
-          {page === 0 && <InputsWrapper />}
-          {page === 1 && <ResultsWrapper />}
+          <div
+            className={`w-full lg:w-1/2 flex-wrap content-evenly lg:flex-nowrap ${
+              page === 1 ? "hidden lg:flex " : "flex"
+            }`}
+          >
+            <InputsWrapper />
+            <button
+              className="lg:hidden w-full mx-auto shadow-sm rounded-lg py-2 text-lg border-slate-100 border-2 bg-blue-500 text-white hover:text-blue-200 active:bg-blue-200 active:text-white active:shadow-none transition-colors"
+              onClick={() => setPage(1)}
+            >
+              Calculate
+            </button>
+          </div>
+
+          <div
+            className={`w-full lg:w-1/2 flex-wrap content-evenly lg:flex-nowrap ${
+              page === 0 ? "hidden lg:flex" : "flex"
+            }`}
+          >
+            <ResultsWrapper />
+          </div>
         </IncomeProvider>
       </div>
       <div className="w-full">

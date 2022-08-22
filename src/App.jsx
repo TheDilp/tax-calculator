@@ -7,7 +7,7 @@ export default function App() {
       id="App"
       className="sm:w-screen h-screen flex justify-center items-center px-4 lg:px-0"
     >
-      <Wrapper />
+    <Wrapper />
     </div>
   );
 }
