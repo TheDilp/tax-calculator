@@ -12,7 +12,7 @@ export default function ResultsWrapper() {
 
   return (
     <div className="w-full p-4 lg:flex flex-col gap-y-8 ">
-      <div className="font-semibold">
+      <div className="mb-4 text-sm lg:text-base font-semibold">
         <span className="text-2xl font-bold mr-4">
           {formatter.format(incomeData.income[`net_${incomeRate}`])}
         </span>

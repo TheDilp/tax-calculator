@@ -3,12 +3,13 @@ import IncomeProvider from "../contexts/IncomeContext";
 import Footer from "./Footer/Footer";
 import InputsWrapper from "./Inputs/InputsWrapper";
 import ResultsWrapper from "./Results/ResultsWrapper";
+import CalcButton from "./Util/CalcButton";
 
 export default function Wrapper() {
   const [page, setPage] = useState(0);
   return (
-    <div className="sm:w-full lg:w-1/2 flex flex-row flex-wrap content-start shadow-md rounded-sm">
-      <div className="w-full h-10 pb-10 ">
+    <div className="w-full lg:w-1/2 flex flex-row flex-wrap content-start shadow-md rounded-md overflow-hidden">
+      <div className="w-full h-10 pb-10">
         <h1 className="hidden lg:block text-3xl font-semibold text-center border-b-2">
           Income Tax Calculator
         </h1>
@@ -39,12 +40,7 @@ export default function Wrapper() {
             }`}
           >
             <InputsWrapper />
-            <button
-              className="lg:hidden w-full mx-auto shadow-sm rounded-lg py-2 text-lg border-slate-100 border-2 bg-blue-500 text-white hover:text-blue-200 active:bg-blue-200 active:text-white active:shadow-none transition-colors"
-              onClick={() => setPage(1)}
-            >
-              Calculate
-            </button>
+            <CalcButton onClick={() => setPage(1)} />
           </div>
 
           <div

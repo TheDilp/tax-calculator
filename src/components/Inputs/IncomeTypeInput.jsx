@@ -3,7 +3,7 @@ import ToggleButton from "../Util/ToggleButton";
 
 export default function IncomeTypeInput() {
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-4 mt-5 lg:mt-0">
       <h2 className="text-center text-xl font-semibold">
         Please choose the income type
       </h2>
