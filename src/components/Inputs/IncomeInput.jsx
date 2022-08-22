@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { frequencies, IncomeContext } from "../../contexts/IncomeContext";
 import Dropdown from "../Util/Dropdown";
 
@@ -9,6 +9,14 @@ export default function IncomeInput() {
       incomeData?.income?.[`${incomeData.incomeType}_${incomeData.incomeRate}`]
     ) || ""
   );
+
+  useEffect(() => {
+    dispatch({
+      type: "CHANGE_INCOME",
+      payload: localIncome,
+    });
+  }, [incomeData.incomeType]);
+
   return (
     <div className="flex border-2 border-gray-200 focus-within:border-blue-400 rounded-md h-10">
       <span className="my-auto pl-2 text-gray-400">$</span>
