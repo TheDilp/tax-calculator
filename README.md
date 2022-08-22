@@ -6,3 +6,4 @@ Tax calculator built with React, TailwindCSS, Webpack and Babel. Features basic 
 
 ![Desktop](desktop.png)
 ![Mobile](mobile.png)
+![Mobile2](mobile2.png)
